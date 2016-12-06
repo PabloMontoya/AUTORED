@@ -11,7 +11,7 @@ $(document).on('ready', function(){
 			elemento2.css('width','19%'),
 			elemento3.css('display', 'block'),
 			elemento4.css('display', 'block')
-			setTimeout(function(){ $('#loading').css('display','none'); },1750)
+			setTimeout(function(){ $('#loading').css('display','none'); },2500)
 		}else if ($.trim($("#searchbycodetxt").val()) !== "" && ($.trim($("#marca_combo").val()) === "" || $.trim($("#modelo_combo").val()) === "" || $.trim($("#anhio_combo").val()) === "")) {
 			alert('Si deseas buscar un código, no selecciones ninguna marca, modelo o año.');
 	        return false;
@@ -28,7 +28,7 @@ $(document).on('ready', function(){
 			elemento2.css('width','19%')
 			elemento3.css('display', 'block')
 			elemento4.css('display', 'block')
-			setTimeout(function(){ $('#loading').css('display','none'); },1750)}
+			setTimeout(function(){ $('#loading').css('display','none'); },2500)}
 	});
 
 	$('#searchbycode').on('click',function(){
@@ -42,7 +42,7 @@ $(document).on('ready', function(){
 			elemento2.css('width','19%'),
 			elemento3.css('display', 'block'),
 			elemento4.css('display', 'block')
-			setTimeout(function(){ $('#loading').css('display','none'); },1750)
+			setTimeout(function(){ $('#loading').css('display','none'); },2500)
 		}else if ($.trim($("#searchbycodetxt").val()) !== "" && ($.trim($("#marca_combo").val()) === "" || $.trim($("#modelo_combo").val()) === "" || $.trim($("#anhio_combo").val()) === "")) {
 			alert('Si deseas buscar un código, no selecciones ninguna marca, modelo o año.');
 	        return false;
@@ -59,7 +59,7 @@ $(document).on('ready', function(){
 			elemento2.css('width','19%')
 			elemento3.css('display', 'block')
 			elemento4.css('display', 'block')
-			setTimeout(function(){ $('#loading').css('display','none'); },1750)}
+			setTimeout(function(){ $('#loading').css('display','none'); },2500)}
 	});
 		
 	$('#clear').on('click',function(){
@@ -77,7 +77,7 @@ $(document).on('ready', function(){
 
 		if (elemento1 === 'block') {
 			elemento2.css('display', 'block')
-			setTimeout(function(){ elemento2.css('display','none'); },1750)
+			setTimeout(function(){ elemento2.css('display','none'); },2500)
 		} 
 	})
 

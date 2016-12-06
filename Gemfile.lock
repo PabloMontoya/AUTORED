@@ -82,6 +82,7 @@ GEM
     net-ssh (3.2.0)
     nokogiri (1.6.7.2-x86-mingw32)
       mini_portile2 (~> 2.0.0.rc2)
+    pg (0.18.4-x86-mingw32)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -167,6 +168,7 @@ DEPENDENCIES
   jquery-rails (~> 4.1, >= 4.1.1)
   mysql2 (~> 0.4.4)
   net-ssh
+  pg (= 0.18.4)
   rails (= 4.2.5.2)
   rake (~> 11.2, >= 11.2.2)
   rake-compiler (~> 1.0, >= 1.0.1)

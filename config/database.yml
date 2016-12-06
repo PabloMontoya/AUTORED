@@ -23,7 +23,7 @@ development:
   adapter:  sqlserver
   host:     187.141.140.100
   port:     9001
-  database: BMSAutoRed
+  database: BMSAutoRed_TestAutoRed30112016
   username: sistemas
   password: 789321
   pool: 5
