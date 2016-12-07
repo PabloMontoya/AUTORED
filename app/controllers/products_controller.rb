@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
                                INNER JOIN prodestab         pres  ON pres.cod_prod      = productos.cod_prod
                                INNER JOIN establecimientos  esta  ON esta.cod_estab     = pres.cod_estab")
                        .group("esta.nombre, me.nombre, mode.nombre, ae.año_equipos, productos.cod_prod, productos.descripcion, lp.nombre, se.nombre, me.nombre, mode.nombre")
+                       .having("sum(pres.exist_unidades)!=0")
                        .having("me.nombre = ?", params[:marca_equipos])
                        .having("mode.nombre = ?", params[:modelo_equipos])
                        .having("ae.año_equipos = ?", params[:año_equipos])

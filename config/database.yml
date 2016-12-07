@@ -23,12 +23,13 @@ development:
   adapter:  sqlserver
   host:     187.141.140.100
   port:     9001
-  database: BMSAutoRed_TestAutoRed30112016
+  database: BMSAutoRed
   username: sistemas
   password: 789321
   pool: 5
   timeout: 5000000
 
+#_TestAutoRed30112016
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
