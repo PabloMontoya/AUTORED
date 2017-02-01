@@ -13,23 +13,9 @@
 	                  <div id="contenedor_logo"> <a href="https://www.autored.mx" target="_blank"> <div class="logo"></div> </a> </div>
 	                </div>
 	            </div>
-
+				
 	            <div id="filtros">
 	                <h5 id="titulo_filtro" align="center"> Filtros </h5>
-
-	                <form id="form" style="margin-top:30px;" autocomplete="off">
-
-	                <!--
-	                <div id="contenedor_select_id">
-	                  <div>
-	                    <ul class="input-list style-1 clearfix">
-	                      <div class="contenedor_select_id">
-	                          <input type="text" placeholder="Código (opcional)" ng-model="filtro.cod_prod"></input> 
-	                      </div>                                      
-	                    </ul>
-	                  </div>
-	                </div>
-					-->
 
 	                <div id="contenedor_select_marca">
 
@@ -37,61 +23,65 @@
 	                    	<h6 class="etiqueta_filtro"> Código: </h6>
 	                    <!-- </label> -->
 	                    <div>
-	                        <ul class="input-list style-1 clearfix">
-	                    	<button align="center" class="btn btn-info" id="searchbycode" ng-click="$scope.toggle_element('#searchbycodetxt',1000)" disabled> Buscar por Código </button>
-	                            <div>
-	                              <input class="form-control" id="searchbycodetxt" type="text" placeholder="(opcional)" ng-model="model_codigo" uib-typeahead="product.cod_prod for product in productos | filter:$viewValue | limitTo:5" disabled></input>
-	                            </div>                                      
-	                        </ul>
+	                    	<form>
+		                        <ul class="input-list style-1 clearfix">
+		                                <input class="form-control" id="searchbycodetxt" type="text" placeholder="(opcional)" ng-model="model_codigo" uib-typeahead="product.cod_prod for product in productos | filter:$viewValue | limitTo:5" ></input>
+		                            <div>
+		                    			<input type="submit" class="btn btn-info" id="searchbycode" value="Buscar por Código" ng-click="getProductsByCode(model_codigo)"> </input>
+		                            </div>                                      
+		                        </ul>
+	                        </form>
 	                    </div>
 	                    
 	                </div>
+	                
+	                <form id="form" style="margin-top:30px;" autocomplete="off">
 
-	                <div id="contenedor_select_modelo">
-	                    <h6 class="etiqueta_filtro"> Marca: </h6>*
-	                    <div>
-	                        <ul class="input-list style-1 clearfix">
-	                            <div>
-	                              <select class="soflow" id="marca_combo" ng-model="model_marca" ng-options="marca for marca in marcas" ng-change="getModels(model_marca)">
-	                              	<option value="">Escoge una..</option>
-	                              </select>
-	                            </div>
-	                        </ul>
-	                    </div>
-	                </div>
+		                <div id="contenedor_select_modelo">
+		                    <h6 class="etiqueta_filtro"> Marca: </h6>*
+		                    <div>
+		                        <ul class="input-list style-1 clearfix">
+		                            <div>
+		                              <select class="soflow" id="marca_combo" ng-model="model_marca" ng-options="marca for marca in marcas" ng-change="getModels(model_marca)">
+		                              	<option value="">Escoge una..</option>
+		                              </select>
+		                            </div>
+		                        </ul>
+		                    </div>
+		                </div>
 
-	                <div id="contenedor_select_anho">
-	                    <h6 class="etiqueta_filtro"> Modelo: </h6>*
-	                    <div>
-	                        <ul class="input-list style-1 clearfix">
-	                            <div>
-	                              <select class="soflow" id="modelo_combo" ng-model="model_modelo" ng-options="modelo for modelo in modelos" ng-change="getYears(model_modelo)">
-	                              	<option value="">Escoge uno..</option>
-	                              </select>
-	                            </div>
-	                        </ul>
-	                    </div>
-	                </div>
+		                <div id="contenedor_select_anho">
+		                    <h6 class="etiqueta_filtro"> Modelo: </h6>*
+		                    <div>
+		                        <ul class="input-list style-1 clearfix">
+		                            <div>
+		                              <select class="soflow" id="modelo_combo" ng-model="model_modelo" ng-options="modelo for modelo in modelos" ng-change="getYears(model_modelo)">
+		                              	<option value="">Escoge uno..</option>
+		                              </select>
+		                            </div>
+		                        </ul>
+		                    </div>
+		                </div>
 
-	                <div id="contenedor_select_anho">
-	                    <h6 class="etiqueta_filtro"> Año: </h6>*
-	                    <div>
-	                        <ul class="input-list style-1 clearfix">
-	                            <div>
-	                              <select class="soflow" id="anhio_combo" ng-model="model_anhio" ng-options="anhio for anhio in anhios">
-	                              	<option value="">Escoge uno..</option>
-	                              </select>
-	                            </div>
-	                        </ul>
-	                    </div>
-	                </div>
+		                <div id="contenedor_select_anho">
+		                    <h6 class="etiqueta_filtro"> Año: </h6>*
+		                    <div>
+		                        <ul class="input-list style-1 clearfix">
+		                            <div>
+		                              <select class="soflow" id="anhio_combo" ng-model="model_anhio" ng-options="anhio for anhio in anhios">
+		                              	<option value="">Escoge uno..</option>
+		                              </select>
+		                            </div>
+		                        </ul>
+		                    </div>
+		                </div>
 
-	                <div id="contenedor_botones">
-	                  <div id="botones" align="center">
-	                    <button type="submit" class="btn btn-primary" ng-click="getProducts()" id="search">Buscar</button>
-	                    <button type="reset" value="Reset" ng-click="clear()" class="btn btn-danger" id="clear">Limpiar</button>
-	                  </div>
-	                </div>
+		                <div id="contenedor_botones">
+		                  <div id="botones" align="center">
+		                    <button type="submit" class="btn btn-primary" ng-click="getProducts()" id="search">Buscar</button>
+		                    <button type="reset" value="Reset" ng-click="clear()" class="btn btn-danger" id="clear">Limpiar</button>
+		                  </div>
+		                </div>
 
 	                </form>
 	            </div>
@@ -131,9 +121,7 @@
 	                              <td ng-if= "checkstring(product.establecimiento) == 5" align="center"> <a href="https://goo.gl/zLRm4r" target="_blank" class="link2maps" > {{product.establecimiento}} </a> </td>
 	                              <td ng-if= "checkstring(product.establecimiento) == 6" align="center"> <a href="https://goo.gl/gzV3lM" target="_blank" class="link2maps" > {{product.establecimiento}} </a> </td>
 	                              <td ng-if= "checkstring(product.establecimiento) == 7" align="center"> <a href="https://goo.gl/wzzOej" target="_blank" class="link2maps" > {{product.establecimiento}} </a> </td>
-	                              <td ng-if= "checkstring(product.establecimiento) == 8" align="center"> <a href="https://goo.gl/IWoj3j" target="_blank" class="link2maps" > {{product.establecimiento}} </a> </td>
-	                              
-
+	                              <td ng-if= "checkstring(product.establecimiento) == 8" align="center"> <a href="https://goo.gl/IWoj3j" target="_blank" class="link2maps" > {{product.establecimiento}} </a> </td>	                          
 
 	                            </tr>
 
@@ -142,9 +130,7 @@
 
 	                  </div>
 	              </div>
-
-	              
-	              
+          
 	        </div> <!-- Aqui cierra el div general -->
 	    <!-- </script> -->
 	</div> <!-- div de ng-controller ProductsCtrl-->

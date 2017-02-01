@@ -15,8 +15,11 @@ class BycodesController < ApplicationController
                                INNER JOIN prodestab         pres  ON pres.cod_prod      = productos.cod_prod
                                INNER JOIN establecimientos  esta  ON esta.cod_estab     = pres.cod_estab")
                        .group("productos.cod_prod, productos.descripcion, lp.nombre, se.nombre, me.nombre, mode.nombre, ae.año_equipos, esta.nombre,
-                               sum(pres.exist_unidades)")
+                               pres.exist_unidades")
+                       .having("pres.exist_unidades!=0")
                        .having("productos.cod_prod = ?", params[:cod_prod])
+                       .order("establecimiento")
+                       .order("anhio DESC")
                        
     respond_with(@products)
   end

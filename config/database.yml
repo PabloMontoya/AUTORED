@@ -19,7 +19,7 @@
 #  password: pablos
 
 #Base de datos autored (la buena)
-production:
+development:
   adapter:  sqlserver
   host:     187.141.140.100
   port:     9001
