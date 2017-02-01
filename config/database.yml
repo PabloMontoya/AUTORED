@@ -24,8 +24,8 @@ development:
   host:     187.141.140.100
   port:     9001
   database: BMSAutoRed
-  username: sistemas
-  password: 789321
+  username: ********
+  password: ******
   pool: 5
   timeout: 5000000
 
