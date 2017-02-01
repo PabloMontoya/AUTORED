@@ -21,7 +21,7 @@
 #Base de datos autored (la buena)
 development:
   adapter:  sqlserver
-  host:     187.141.140.100
+  host:     ***.***.***.***
   port:     9001
   database: BMSAutoRed
   username: ********
